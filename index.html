@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/24229990ee.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>API Countries</title>
+</head>
+
+<body class="body" data-theme>
+    <dialog class="loader-modal" id="loader-modal">
+        <img src="./oval.svg" class="loader" id="loader">
+    </dialog>
+    <div class="container" id="container" data-theme>
+        <button class="up-button hide" id="up-button" data-theme><i class="fa-solid fa-up-long"></i></button>
+        <header class="header" >
+            <div class="heading" data-theme><span class="heading__text">Where in the world?</span><span
+                    class="heading__dark-mode" id="heading__dark-mode"><i class="fa-solid fa-sun" id="icon"></i><span id="dark-mode-text">Light Mode</span></span>
+            </div>
+        </header>
+
+
+        <main id="main" class="main">
+            <form class="form">
+                <div class="input-group" data-theme>
+                    <i class="fa-solid fa-magnifying-glass input-group__icon"></i>
+                    <input class="input-group__input" id="input-search" autocomplete="off" type="search" placeholder="Search for a country...">
+                </div>
+                <div class="select-group" data-theme>
+                    <div class="select">
+                        <i class="fa-solid fa-angle-down select__arrow"></i>
+                        <span class="select__focus" id="select-focus">Filter by Region</span>
+                    </div>
+
+                    <ul class="select-list">
+                        <li class="select-list__option" data-name="africa">Africa</li>
+                        <li class="select-list__option" data-name="americas">America</li>
+                        <li class="select-list__option" data-name="asia">Asia</li>
+                        <li class="select-list__option" data-name="europe">Europe</li>
+                        <li class="select-list__option" data-name="oceania">Oceanía</li>
+                    </ul>
+                </div>
+            </form>
+
+            <button class="button-home hide" id="button" data-theme>
+                <i class="fa-solid fa-arrow-left-long"></i>Back
+            </button>
+            <div class="country-container" id="country-container"></div>
+        </main>
+    </div>
+
+    <template id="template">
+        <section class="country" data-theme-country>
+            <button class="country__button-back hide" data-theme-country>
+                <i class="fa-solid fa-arrow-left-long"></i>Back
+            </button>
+            <img class="country__flag">
+            <div class="country-content">
+                <div class="text-container">
+                    <div class="country-heading">
+                        <h2 class="country-heading__item name"></h2>
+                        <span class="country-heading__item native-name hide">Native Name: <span
+                                class="response"></span></span>
+                        <span class="country-heading__item population">Population: <span class="response"></span></span>
+                        <span class="country-heading__item region">Region: <span class="response"></span></span>
+                        <span class="country-heading__item sub-region hide">Sub Region: <span
+                                class="response"></span></span>
+                        <span class="country-heading__item capital">Capital: <span class="response"></span></span>
+                    </div>
+                    <div class="country-footer">
+                        <span class="country-footer__item top-level hide">Top Level Domain: <span
+                                class="response"></span></span>
+                        <span class="country-footer__item currencies hide">Currencies: <span
+                                class="response"></span></span>
+                        <span class="country-footer__item languages hide">Languages:<span
+                                class="response"></span></span>
+                    </div>
+                </div>
+                <div class="country-borders borders hide"></div>
+            </div>
+        </section>
+    </template>
+
+    <script src="./js/index.js" type="module"></script>
+</body>
+
+</html>
